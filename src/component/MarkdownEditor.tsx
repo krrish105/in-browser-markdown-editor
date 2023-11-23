@@ -1,6 +1,6 @@
-const MarkdownEditor = ({ markdownValue, setMarkdownValue }: any) => {
+const MarkdownEditor = ({ markdownValue, setMarkdownValue, preview }: any) => {
 	return (
-		<section id='markdown' className='h-full'>
+		<section id='markdown' className={`h-full ${preview ? "hidden" : ""}`}>
 			<h2 className='heading_s py-3 px-4 uppercase'>Markdown</h2>
 			<div className='pt-6 pb-2 px-4 h-full'>
 				<textarea

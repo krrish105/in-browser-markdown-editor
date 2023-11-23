@@ -4,6 +4,7 @@ import PreviewSection from "@/component/PreviewSection";
 import { useState } from "react";
 
 const MainEditor = () => {
+	const [preview, setPreview] = useState(false);
 	const [markdownValue, setMarkdownValue] = useState("");
 	const [markdownPreview, setMarkdownPreview] = useState("");
 
@@ -13,12 +14,17 @@ const MainEditor = () => {
 	};
 
 	return (
-		<main className='grid grid-cols-2'>
+		<main className={`grid ${preview ? "grid-cols-1" : "grid-cols-2"}`}>
 			<MarkdownEditor
 				markdownValue={markdownValue}
 				setMarkdownValue={onChangeHandler}
+				preview={preview}
 			/>
-			<PreviewSection markdownPreview={markdownPreview} />
+			<PreviewSection
+				markdownPreview={markdownPreview}
+				preview={preview}
+				setPreview={setPreview}
+			/>
 		</main>
 	);
 };
