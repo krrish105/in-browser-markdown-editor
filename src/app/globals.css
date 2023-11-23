@@ -46,6 +46,7 @@ main {
 body {
 	color: rgb(var(--foreground-rgb));
 	background-color: var(--background);
+	overflow: hidden;
 }
 
 /* =========== Typography =========== */
@@ -241,7 +242,6 @@ input[type="text"] {
 	outline: none;
 	border-bottom: 1px solid transparent;
 	padding-bottom: 4px;
-	color: var(--white);
 }
 input[type="text"]:focus,
 input[type="text"]:active,
@@ -249,6 +249,9 @@ input[type="text"]:target {
 	border-bottom: 1px solid var(--white);
 }
 
+.document_name {
+	color: var(--white);
+}
 header {
 	background-color: var(--black-800);
 }
@@ -264,4 +267,26 @@ section h2 {
 #markdown {
 	height: 100%;
 	border-right: 1px solid var(--black-600);
+}
+
+textarea {
+	width: 100%;
+	background-color: transparent;
+	height: 100%;
+	resize: none;
+	color: var(--black-400);
+	outline: none;
+}
+
+#preview,
+textarea {
+	color: var(--black-400);
+}
+
+.aside_menu {
+	color: var(--black-400);
+}
+
+aside {
+	background-color: var(--black-900);
 }

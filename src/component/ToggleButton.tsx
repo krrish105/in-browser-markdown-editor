@@ -1,6 +1,6 @@
 const ToggleButton = () => {
 	return (
-		<div className='flex gap-2 m-9'>
+		<div className='flex gap-2'>
 			<label className='switch flex justify-between items-center'>
 				<input type='checkbox' />
 				<span className='slider round'></span>
