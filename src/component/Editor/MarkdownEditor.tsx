@@ -1,11 +1,11 @@
-const MarkdownEditor = ({ markdownValue, setMarkdownValue, preview }: any) => {
+const MarkdownEditor = ({ markdownValue, setMarkdownValue }: any) => {
 	return (
-		<section id='markdown' className={`h-full ${preview ? "hidden" : ""}`}>
+		<section id='markdown'>
 			<h2 className='heading_s py-3 px-4 uppercase'>Markdown</h2>
-			<div className='pt-6 pb-2 px-4 h-full'>
+			<div className='pt-6 pb-2 px-4 max_h_editors'>
 				<textarea
-					name=''
-					id=''
+					name='markdown'
+					id='markdown'
 					value={markdownValue}
 					onChange={(e) => setMarkdownValue(e.target.value)}
 				></textarea>

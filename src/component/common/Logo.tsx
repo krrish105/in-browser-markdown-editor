@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Logo = () => {
 	return (
-		<Link href='/' className='pl-6'>
+		<Link href='/' className='pl-6 flex justify-center items-center w-fit'>
 			<span className='sr-only'>Logo</span>
 			<svg width='130' height='12' xmlns='http://www.w3.org/2000/svg'>
 				<path

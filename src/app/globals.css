@@ -37,16 +37,15 @@ img {
 	max-width: 100%;
 	height: auto;
 }
-
-html,
-body,
-main {
-	height: 100%;
+.container {
+	max-width: 1200px;
+	margin-inline: auto;
 }
+
 body {
 	color: rgb(var(--foreground-rgb));
 	background-color: var(--background);
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 
 /* =========== Typography =========== */
@@ -79,7 +78,8 @@ body {
 .preview {
 	font-family: Roboto Slab;
 }
-.preview_h1 {
+.preview_h1,
+#preview h1 {
 	color: var(--black-700, #35393f);
 
 	/* Preview H1 */
@@ -87,21 +87,24 @@ body {
 	font-weight: 700;
 	line-height: normal;
 }
-.preview_h2 {
+.preview_h2,
+#preview h2 {
 	color: var(--black-700, #35393f);
 	/* Preview H2 */
 	font-size: 28px;
 	font-weight: 300;
 	line-height: normal;
 }
-.preview_h3 {
+.preview_h3,
+#preview h3 {
 	color: var(--black-700, #35393f);
 	/* Preview H3 */
 	font-size: 24px;
 	font-weight: 700;
 	line-height: normal;
 }
-.preview_h4 {
+.preview_h4,
+#preview h4 {
 	color: var(--black-700, #35393f);
 	/* Preview H4 */
 
@@ -109,7 +112,8 @@ body {
 	font-weight: 700;
 	line-height: normal;
 }
-.preview_h5 {
+.preview_h5,
+#preview h5 {
 	color: var(--black-700, #35393f);
 	/* Preview H5 */
 	font-size: 16px;
@@ -117,13 +121,15 @@ body {
 	line-height: normal;
 }
 
-.preview_h6 {
+.preview_h6,
+#preview h6 {
 	color: var(--orange, #e46643);
 	font-size: 14px;
 	font-weight: 700;
 	line-height: normal;
 }
-.preview_para {
+.preview_para,
+#preview p {
 	color: var(--black-700, #35393f);
 	/* Preview Paragraph */
 	font-size: 14px;
@@ -148,19 +154,8 @@ body {
 
 /* Components */
 .button {
-	border-radius: 4px;
-	background: var(--orange, #e46643);
-
-	color: var(--100, #fff);
-
-	/* Heading (M) */
-	font-family: Roboto;
-	font-size: 15px;
-	font-weight: 400;
-	line-height: normal;
-}
-
-.button {
+	display: block;
+	text-align: center;
 	border-radius: 4px;
 	background: var(--orange, #e46643);
 
@@ -173,6 +168,7 @@ body {
 	line-height: normal;
 	padding: 10px 16px;
 }
+
 .button:hover {
 	background: var(--orange-hover, #f39765);
 }
@@ -185,7 +181,6 @@ body {
 /* The switch - the box around the slider */
 .switch {
 	position: relative;
-	/* display: inline-block; */
 	width: 116px;
 	height: 26px;
 }
@@ -301,4 +296,38 @@ aside {
 	width: 32px;
 	height: 1.2px;
 	background-color: var(--white);
+}
+
+.document_name_label {
+	color: var(--black-500);
+
+	/* Body (M) */
+	font-size: 13px;
+	font-weight: 300;
+	line-height: normal;
+}
+
+.editor_container {
+	@apply w-full grid;
+	grid-template-rows: 64px calc(100% - 64px);
+}
+
+.max_h_editors {
+	height: 100%;
+	max-height: calc(100vh - 110px);
+}
+textarea {
+	max-height: calc(100vh - 120px);
+	overflow-y: auto;
+}
+
+.home_main {
+	height: calc(100vh - 60px);
+}
+
+.alert.success svg {
+	fill: rgb(21, 128, 61);
+}
+.alert.error svg {
+	fill: #7f1d1d;
 }

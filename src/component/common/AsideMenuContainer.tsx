@@ -1,6 +1,6 @@
 "use client";
-import AsideMenu from "@/component/AsideMenu";
 import { useState } from "react";
+import AsideMenu from "@/component/common/AsideMenu";
 
 const AsideMenuContainer = () => {
 	const [openMenu, setOpenMenu] = useState(false);
