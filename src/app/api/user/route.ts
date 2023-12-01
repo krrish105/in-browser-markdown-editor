@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import connectDB from "@/database/connect";
 import User from "@/models/User";
 import { authOptions } from "@/utilities/authOptions";
+import PostModel from "@/models/Post";
 
 export const GET = async (request: Request) => {
 	const session = await getServerSession(authOptions);
@@ -13,7 +14,10 @@ export const GET = async (request: Request) => {
 		try {
 			await connectDB();
 
-			const user = await User.findById(session.user).populate("posts");
+			const user = await User.findById(session.user).populate({
+				path: "posts",
+				model: PostModel,
+			});
 
 			return NextResponse.json(
 				{
