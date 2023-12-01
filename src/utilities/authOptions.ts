@@ -17,6 +17,7 @@ export const authOptions: NextAuthOptions = {
 	],
 	callbacks: {
 		async session({ session }) {
+			await connectDB();
 			const sessionUser = await User.findOne({ email: session.user?.email });
 			session.user = sessionUser._id;
 			return session;
