@@ -10,13 +10,15 @@ const AsideMenuContainer = () => {
 			{openMenu && <AsideMenu />}
 
 			<button
-				className='py-6 p-6 menu_button absolute -right-[80px] top-0'
+				className={`py-6 p-6 menu_button absolute -right-[80px] top-0 ${
+					openMenu && "open"
+				}`}
 				onClick={() => setOpenMenu((prev) => !prev)}
 			>
-				<span className='sr-only'>Open Menu</span>
 				<span></span>
 				<span></span>
 				<span></span>
+				<div className='sr-only'>Open Menu</div>
 			</button>
 		</div>
 	);

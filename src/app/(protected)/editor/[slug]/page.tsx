@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import AsideMenuContainer from "@/component/common/AsideMenuContainer";
-import Header from "@/component/common/Header";
 import MainEditor from "@/component/Editor/MainEditor";
 import { headers } from "next/headers";
 

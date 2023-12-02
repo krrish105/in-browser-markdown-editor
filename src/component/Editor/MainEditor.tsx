@@ -3,6 +3,7 @@ import MarkdownEditor from "@/component/Editor/MarkdownEditor";
 import PreviewSection from "@/component/Editor/PreviewSection";
 import { useState } from "react";
 import Header from "@/component/common/Header";
+import Splitter, { SplitDirection } from "@devbookhq/splitter";
 
 const MainEditor = ({ data }: { data: any }) => {
 	const [preview, setPreview] = useState(false);
@@ -19,15 +20,22 @@ const MainEditor = ({ data }: { data: any }) => {
 				postData={data}
 				updatedMarkdown={markdownValue}
 			/>
-			<main className={`grid ${preview ? "grid-cols-1" : "grid-cols-2"}`}>
-				<div className={`${preview ? "hidden" : ""}`}>
-					<MarkdownEditor
+			<main>
+				<Splitter
+					direction={SplitDirection.Horizontal}
+					initialSizes={!preview ? [50, 50] : [100]}
+				>
+					{!preview && (
+						<MarkdownEditor
+							markdownValue={markdownValue}
+							setMarkdownValue={onChangeHandler}
+						/>
+					)}
+					<PreviewSection
 						markdownValue={markdownValue}
-						setMarkdownValue={onChangeHandler}
+						setPreview={setPreview}
 					/>
-				</div>
-
-				<PreviewSection markdownValue={markdownValue} setPreview={setPreview} />
+				</Splitter>
 			</main>
 		</>
 	);
