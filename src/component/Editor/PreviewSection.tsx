@@ -2,9 +2,9 @@ import ReactMarkdown from "react-markdown";
 
 const PreviewSection = ({ markdownValue, setPreview }: any) => {
 	return (
-		<section id='preview'>
-			<h2 className='heading_s py-3 px-4 uppercase flex justify-between gap-4'>
-				<span className='heading_s'>Preview</span>
+		<section>
+			<div className='heading_bg heading_s py-3 px-4 uppercase flex justify-between gap-4'>
+				<h2 className='heading_s'>Preview</h2>
 				<button onClick={() => setPreview((prev: any) => !prev)}>
 					<svg width='16' height='12' xmlns='http://www.w3.org/2000/svg'>
 						<path
@@ -13,8 +13,11 @@ const PreviewSection = ({ markdownValue, setPreview }: any) => {
 						/>
 					</svg>
 				</button>
-			</h2>
-			<div className='pt-6 pb-2 px-4 max_h_editors overflow-y-scroll'>
+			</div>
+			<div
+				className='pt-6 pb-2 px-4 max_h_editors overflow-y-scroll'
+				id='preview'
+			>
 				<ReactMarkdown>{markdownValue}</ReactMarkdown>
 			</div>
 		</section>

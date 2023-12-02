@@ -8,7 +8,6 @@ const PostSchema = new Schema(
 			type: String,
 			required: [true, "Please provide a name"],
 			trim: true,
-			unique: true,
 		},
 		markdown: {
 			type: String,
@@ -17,7 +16,6 @@ const PostSchema = new Schema(
 			type: String,
 			required: [true, "Please provide a slug"],
 			trim: true,
-			unique: true,
 		},
 		author: {
 			type: Schema.Types.ObjectId,

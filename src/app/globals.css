@@ -254,7 +254,7 @@ header {
 	background-color: var(--black-700);
 }
 
-section h2 {
+section .heading_bg {
 	background-color: var(--section-heading-bg);
 }
 
@@ -330,4 +330,18 @@ textarea {
 }
 .alert.error svg {
 	fill: #7f1d1d;
+}
+
+.button_icon:hover svg path,
+.button_icon:focus svg path,
+.button_icon:target svg path,
+.button_icon:active svg path {
+	fill: var(--orange);
+}
+
+a.document_name:hover,
+a.document_name:active,
+a.document_name:target,
+a.document_name:focus {
+	color: var(--orange);
 }

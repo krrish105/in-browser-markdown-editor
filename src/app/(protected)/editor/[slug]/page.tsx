@@ -37,7 +37,6 @@ const Editor = async ({ params }: { params: { slug: string } }) => {
 			<div className='flex h-screen'>
 				<AsideMenuContainer />
 				<div className='editor_container'>
-					<Header showControls={true} postData={data.post} />
 					<MainEditor data={data.post} />
 				</div>
 			</div>

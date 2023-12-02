@@ -3,7 +3,7 @@ import axios from "axios";
 const deletePost = async (
 	setError: any,
 	setSuccess: any,
-	slug: any,
+	_id: any,
 	router: any
 ) => {
 	setError("");
@@ -12,7 +12,10 @@ const deletePost = async (
 	try {
 		const res = await axios({
 			method: "DELETE",
-			url: `${process.env.NEXT_PUBLIC_URL}/api/post/${slug}`,
+			url: `${process.env.NEXT_PUBLIC_URL}/api/post/delete`,
+			data: JSON.stringify({
+				_id,
+			}),
 		});
 
 		if (res.status === 200) {

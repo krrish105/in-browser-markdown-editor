@@ -4,14 +4,17 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Alert from "@/component/Alert/Alert";
 
-const DeleteButton = ({ slug }: { slug: string }) => {
+const DeleteButton = ({ _id }: { _id: string }) => {
 	const router = useRouter();
 	const [error, setError] = useState();
 	const [success, setSuccess] = useState();
 
 	return (
 		<>
-			<button onClick={() => deletePost(setError, setSuccess, slug, router)}>
+			<button
+				onClick={() => deletePost(setError, setSuccess, _id, router)}
+				className='button_icon'
+			>
 				<span className='sr-only'>Delete</span>
 				<svg width='18' height='20' xmlns='http://www.w3.org/2000/svg'>
 					<path

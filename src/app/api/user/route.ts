@@ -7,6 +7,7 @@ import PostModel from "@/models/Post";
 
 export const GET = async (request: Request) => {
 	const session = await getServerSession(authOptions);
+	console.log(session);
 
 	if (!session) {
 		return NextResponse.json({ message: "You are not logged in." });
