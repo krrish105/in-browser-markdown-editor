@@ -7,7 +7,7 @@ export default function Editor() {
 			<div className='flex h-screen'>
 				<AsideMenuContainer />
 				<div className='editor_container'>
-					<Header showControls={false} postData={null} />
+					<Header showControls={false} postData={null} updatedMarkdown='' />
 					<div>No Document Selected</div>
 				</div>
 			</div>
