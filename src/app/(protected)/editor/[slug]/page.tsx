@@ -7,7 +7,7 @@ import { headers } from "next/headers";
 async function getData(slug: string) {
 	const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/post/${slug}`, {
 		cache: "no-store",
-		headers: headers(),
+		// headers: headers(),
 	});
 
 	if (res.status !== 200) {
