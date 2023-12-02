@@ -23,7 +23,6 @@ const NewDocumentButton = () => {
 						{
 							name: `New Document ${user.posts?.length + 1}`,
 							markdown: "",
-							author: user._id,
 						},
 						router
 					)

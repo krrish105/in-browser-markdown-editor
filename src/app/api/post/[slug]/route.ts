@@ -25,6 +25,7 @@ export const GET = async (request: Request, { params }: any) => {
 					{ status: 200 }
 				);
 			}
+			return new NextResponse("NOT FOUND", { status: 404 });
 		} catch (error) {
 			return NextResponse.json(
 				{

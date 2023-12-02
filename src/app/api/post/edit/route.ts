@@ -37,6 +37,7 @@ export const PATCH = async (request: Request, response: Response) => {
 				await post.save();
 				return NextResponse.json(post, { status: 200 });
 			}
+			return new NextResponse("NOT FOUND", { status: 404 });
 		} catch (error: any) {
 			const customError = errorHandler(error);
 			return NextResponse.json(

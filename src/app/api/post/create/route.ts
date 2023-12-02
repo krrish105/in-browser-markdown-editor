@@ -11,14 +11,14 @@ export const POST = async (request: Request, response: Response) => {
 	if (!session) {
 		return NextResponse.json({ message: "You are not logged in." });
 	} else {
-		const { name, markdown, author } = await request.json();
+		const { name, markdown } = await request.json();
 		let slug = name.toLowerCase().split(" ").join("-");
 		try {
 			await connectDB();
 			const newPost = await Post.create({
 				name,
 				markdown,
-				author,
+				author: session.user,
 				slug,
 			});
 			return NextResponse.json(newPost, { status: 200 });
